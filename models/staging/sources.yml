@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: safedb
+    database: SAFEDB          # ← still reads FROM the shared db
+    schema: PUBLIC
+    tables:
+      - name: FROSTBYTE_TB_SAFEGRAPH_S

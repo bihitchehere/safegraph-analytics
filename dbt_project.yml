@@ -1,0 +1,23 @@
+name: 'pipeline'
+version: '1.0.0'
+profile: 'pipeline'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  pipeline:
+    staging:
+      +materialized: view          # views will now write to PIPELINE_DB.STAGING
+      +warehouse: DEV_WH           # ← removed PROD_WH (doesn't exist yet)
+    marts:
+      +materialized: table
+      +warehouse: DEV_WH

@@ -1,0 +1,15 @@
+# dbt
+target/
+dbt_packages/
+logs/
+.dbt/
+
+# credentials
+profiles.yml
+*.p8
+*.pem
+.env
+
+# OS
+.DS_Store
+__pycache__/
